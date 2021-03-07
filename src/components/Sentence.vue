@@ -1,50 +1,40 @@
 <template>
-  <div class="hello">
-    <h1 class="inline-h1" @click="togglePeriod">{{ msg }}</h1>
-    <div class="period-div" @click="togglePeriod">
-      <h1 v-if="visible" class="inline-h1" >.</h1>
-    </div>
+  <div class="sentence">
+    <p class="inline-h1 clickable" @click="toggleVisible">{{ sentence }}</p>
+    <Punctuation :visible="visible"/>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+import Punctuation from './Punctuation.vue'
+
 export default {
   name: 'Sentence',
-  props: {
-    msg: String
+  components: {
+    Punctuation
   },
   data() {
     return {
       visible: false
     }
   },
+  computed: mapGetters(['sentence']),
   methods: {
-    togglePeriod() {
+    toggleVisible() {
       this.visible = !this.visible
     }
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-period-div {
-  width: 50px;
-  height: 50px;
-  border: 1px red solid;
+<style>
+.inline-h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  display: inline;
 }
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+.clickable {
+  cursor: pointer;
 }
 </style>

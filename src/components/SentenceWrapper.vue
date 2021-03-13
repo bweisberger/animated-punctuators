@@ -1,7 +1,9 @@
 <template>
   <div class="sentence-wrapper">
     <slot/>
+    <slot name="hero"/>
   </div>
+
 </template>
 
 <script>

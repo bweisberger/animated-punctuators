@@ -1,30 +1,20 @@
 <template>
   <div class="sentence">
-    <p class="inline-h1 clickable" @click="toggleVisible">{{ sentence }}</p>
-    <Punctuation :visible="visible"/>
+    <p class="inline-h1 clickable">here is the first hero to the show about 6</p>
+    <Period text="ft" spaces="end"/>
+    <p class="inline-h1 clickable">in stature whose hair is that of a</p>
+    <Period text="god" spaces="both"/>
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
-import Punctuation from './Punctuation.vue'
+import Period from './Period.vue'
 
 export default {
   name: 'Sentence',
   components: {
-    Punctuation
+    Period
   },
-  data() {
-    return {
-      visible: false
-    }
-  },
-  computed: mapGetters(['sentence']),
-  methods: {
-    toggleVisible() {
-      this.visible = !this.visible
-    }
-  }
 }
 </script>
 
@@ -33,8 +23,5 @@ export default {
   font-size: 2rem;
   font-weight: 700;
   display: inline;
-}
-.clickable {
-  cursor: pointer;
 }
 </style>

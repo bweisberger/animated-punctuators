@@ -1,22 +1,18 @@
 <template>
   <div id='app'>
-    <SentenceView/>
+    <ComicView/>
   </div>
 </template>
 
 <script>
-import SentenceView from './views/SentenceView.vue'
+import ComicView from './views/ComicView.vue'
 
 export default {
   name: 'App',
   components: {
-    SentenceView
+    ComicView
   }
 }
 </script>
 
-<style>
-body {
-  height: 100%;
-}
-</style>
+

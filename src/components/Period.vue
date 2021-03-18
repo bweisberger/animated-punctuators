@@ -1,7 +1,7 @@
 <template>
-  <span class="container clickable" :style="styleObject" @click="toggleVisible">
-    <p v-if="visible" class="inline-h1 text">{{withPeriod}}</p>
-    <p v-else class="inline-h1 text">{{withoutPeriod}}</p>
+  <span class="container clickable" @click="togglePeriod">
+    <p v-if="period" class="inline-h1 text">{{withPeriod}}</p>
+    <p v-else class="inline-h1 text" :style="styleObject">{{withoutPeriod}}</p>
   </span>
 </template>
 
@@ -19,10 +19,10 @@ export default {
   },
   data() {
     return {
-      visible: false,
+      period: false,
       textColor: {
         base: '#0000000',
-        hover: 'pink',
+        hover: '#c9c4c3',
       }
     }
   },
@@ -57,9 +57,14 @@ export default {
     }
   },
   methods: {
-    toggleVisible() {
+    togglePeriod() {
+      if (!this.period) {
+        this.period = true;
+        this.$emit('click');
+      }
+    },
+    toggleHover() {
 
-      this.visible = true
     }
   }
 }
@@ -67,10 +72,10 @@ export default {
 
 <style scoped>
   .text {
-    color: var('--text-color');
+    color: var(--text-color);
   }
   .text:hover {
-    color: var('--text-color--hover');
+    color: var(--text-color--hover);
   }
   .container {
     padding: 2px;

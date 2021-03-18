@@ -22,7 +22,7 @@ export default {
 .inline-h1 {
   font-size: 3rem;
   font-weight: 500;
-  font-family: Arial, 'sans-serif';
+  font-family: Sans-Serif;
   display: inline;
 }
 </style>

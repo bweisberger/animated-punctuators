@@ -22,7 +22,7 @@ export default {
   },
   data() {
     return {
-      activeHero: true
+      activeHero: false
     }
   },
   methods: {

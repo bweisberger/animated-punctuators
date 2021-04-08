@@ -1,39 +1,43 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import VueRouter from 'vue-router';
+// import VueRouter from 'vue-router';
 import App from './App.vue';
+import router from './router';
+
 
 Vue.config.productionTip = false
 
 Vue.use(Vuex);
-Vue.use(VueRouter);
+Vue.use(router);
 
-// 0. If using a module system (e.g. via vue-cli), import Vue and VueRouter
-// and then call `Vue.use(VueRouter)`.
+// Vue.use(VueRouter);
 
-// 1. Define route components.
-// These can be imported from other files
-const About = { template: '<div>About</div>' }
-const Home = { template: '<div>Home</div>' }
+// // 0. If using a module system (e.g. via vue-cli), import Vue and VueRouter
+// // and then call `Vue.use(VueRouter)`.
 
-// 2. Define some routes
-// Each route should map to a component. The "component" can
-// either be an actual component constructor created via
-// `Vue.extend()`, or just a component options object.
-// We'll talk about nested routes later.
-const routes = [
-  { path: '/about', component: About },
-  { path: '/home', component: Home }
-]
+// // 1. Define route components.
+// // These can be imported from other files
+// const About = { template: '<div>About</div>' }
+// const Home = { template: '<div>Home</div>' }
 
-// 3. Create the router instance and pass the `routes` option
-// You can pass in additional options here, but let's
-// keep it simple for now.
-const router = new VueRouter({
-  routes // short for `routes: routes`
-})
+// // 2. Define some routes
+// // Each route should map to a component. The "component" can
+// // either be an actual component constructor created via
+// // `Vue.extend()`, or just a component options object.
+// // We'll talk about nested routes later.
+// const routes = [
+//   { path: '/about', component: About },
+//   { path: '/home', component: Home }
+// ]
 
-// Now the app has started!
+// // 3. Create the router instance and pass the `routes` option
+// // You can pass in additional options here, but let's
+// // keep it simple for now.
+// const router = new VueRouter({
+//   routes // short for `routes: routes`
+// })
+
+// // Now the app has started!
 
 const store = new Vuex.Store({
   state: {

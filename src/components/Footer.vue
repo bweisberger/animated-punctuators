@@ -1,7 +1,10 @@
 <template>
-  <div class="footer">
-    Footer
-  </div>
+  <footer>
+    <p>Copyright &copy; 2021</p>
+    <router-link to="/about">About</router-link>
+    <!-- <a href="/about">About</a> -->
+  </footer>
+  
 </template>
 
 <script>
@@ -10,4 +13,13 @@ export default {
 }
 </script>
 
-<style></style>
+<style scoped>
+  a {
+    color: #333;
+  }
+
+  footer {
+    margin-top: 30px;
+    text-align: center;
+  }
+</style>

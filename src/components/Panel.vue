@@ -19,11 +19,10 @@ export default {
 
 <style>
 .panel {
-  height: 80vh;
+  height: 40vh;
   width: 100%;
   display: flex;
   align-items: flex-end;
-
 }
 .sentence-container {
   width: 53vw;
@@ -33,17 +32,7 @@ export default {
 .hero-container {
   display: flex;
   justify-content: flex-end;
-  width: 40vw;
+  width: 350px;
   z-index: -1;
-  padding-bottom: 20px;
 }
-
-.hero-container > .static-hero {
-  width: 40%;
-}
-
-.hero-container > .active-hero {
-  width: 140%;
-}
-
 </style>

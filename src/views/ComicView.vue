@@ -1,15 +1,21 @@
 <template>
-  <Panel>
-    <template #sentence>
-      <Sentence @clicked-period="toggleActiveHero"/>
-    </template>
-    <template #hero-active v-if="activeHero">
-      <img src="../assets/second-period-laser.gif" class="active-hero"/>
-    </template>
-    <template #hero v-else>
-      <img src="../assets/second-period.png" class="static-hero"/>
-    </template>
-  </Panel>
+  <div class="wrapper">
+    <div class="header">
+    </div>
+    <Panel>
+      <template #sentence>
+        <Sentence @clicked-period="toggleActiveHero"/>
+      </template>
+      <template #hero-active v-if="activeHero">
+        <img src="../assets/second-period-laser.gif" class="hero active"/>
+      </template>
+      <template #hero v-else>
+        <img src="../assets/second-period.png" class="hero static"/>
+      </template>
+    </Panel>
+    <div class="footer">
+    </div>
+  </div>
 </template>
 
 <script>
@@ -37,5 +43,21 @@ export default {
 </script>
 
 <style>
+.header {
+  height: 20vh;
+}
+.footer {
+  height: 20vh;
+}
+.hero {
+  position: relative;
+}
 
+.hero.static {
+  width: 40%;
+}
+
+.hero.active {
+  width: 140%;
+}
 </style>

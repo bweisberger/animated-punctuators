@@ -3,7 +3,7 @@
     <Header/>
     <ComicView/>
     <About/>
-    <router-view></router-view>
+    <!-- <router-view></router-view> -->
     <Footer/>
   </div>
 </template>

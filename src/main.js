@@ -5,10 +5,13 @@ import App from './App.vue';
 import router from './router';
 
 
+import { createApp } from 'vue-router';
+
+
 Vue.config.productionTip = false
 
 Vue.use(Vuex);
-Vue.use(router);
+// Vue.use(router);
 
 // Vue.use(VueRouter);
 
@@ -48,8 +51,14 @@ const store = new Vuex.Store({
   }
 })
 
-new Vue({
-  store,
-  router,
-  render: h => h(App),
-}).$mount('#app')
+// new Vue({
+//   store,
+//   router,
+//   render: h => h(App),
+// }).$mount('#app')
+
+
+createApp(App)
+  .use(store)
+  .use(router)
+  .mount('#app')

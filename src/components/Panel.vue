@@ -1,38 +1,55 @@
 <template>
   <div class="panel">
-    <main class="sentence-container">
-      <slot name="sentence"/>
-    </main>
-    <aside class="hero-container">
-      <slot name="hero"/>
-      <slot name="hero-active"/>
-    </aside>
-    <slot/>
+    <section class="projectile-container">
+      <slot name="projectile" />
+    </section>
+    <div class="text-hero-container">
+      <section class="text-container">
+        <slot name="text" />
+      </section>
+      <section class="hero-container">
+        <slot name="hero" />
+      </section>
+    </div>
+    <slot />
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Panel',
-}
+  name: "Panel",
+};
 </script>
 
 <style>
 .panel {
   height: 40vh;
-  width: 100%;
+  width: calc(100% - 84px);
+  padding: 0 40px;
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
 }
-.sentence-container {
-  width: 53vw;
+
+.text-hero-container {
+  display: flex;
+}
+.text-container {
+  width: 75%;
   padding-left: 20px;
 }
 
 .hero-container {
   display: flex;
   justify-content: flex-end;
-  width: 350px;
+  width: 25%;
   z-index: -1;
+}
+
+.projectile-container {
+  display: flex;
+  width: 75%;
+  height: 100px;
+  justify-content: center;
+  z-index: -2;
 }
 </style>

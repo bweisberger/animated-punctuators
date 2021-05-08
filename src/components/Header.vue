@@ -10,4 +10,8 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+.header {
+  background-color: hotpink;
+}
+</style>

@@ -62,9 +62,6 @@ export default {
         this.period = true;
         this.$emit('click');
       }
-    },
-    toggleHover() {
-
     }
   }
 }

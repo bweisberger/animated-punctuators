@@ -1,20 +1,37 @@
 <template>
   <div class="wrapper">
-    <div class="header">
-    </div>
     <Panel>
-      <template #sentence>
-        <Sentence @clicked-period="toggleActiveHero"/>
+      <template #text>
+        <Sentence 
+          @clicked-period="toggleLaserHero"
+          @clicked-capital="toggleGrenadeHero"
+        />
       </template>
-      <template #hero-active v-if="activeHero">
-        <img src="../assets/second-period-laser.gif" class="hero active"/>
+      <template #hero>
+        <img  
+          v-if="laserHero" 
+          src="../assets/second-period-laser.gif" 
+          class="laser-hero hero"
+        />
+        <img  
+          v-else-if="grenadeHero" 
+          src="../assets/Grenade_Final.png" 
+          class="grenade-hero hero"
+        />
+        <img 
+          v-else 
+          src="../assets/second-period.png" 
+          class="static-hero hero"
+        />
       </template>
-      <template #hero v-else>
-        <img src="../assets/second-period.png" class="hero static"/>
+      <template #projectile>
+        <img  
+          v-if="grenade" 
+          src="../assets/Grenade_Flight.png" 
+          class="grenade"
+        />
       </template>
     </Panel>
-    <div class="footer">
-    </div>
   </div>
 </template>
 
@@ -28,15 +45,26 @@ export default {
   },
   data() {
     return {
-      activeHero: false
+      laserHero: false,
+      grenadeHero: false,
+      grenade: false
     }
   },
   methods: {
-    toggleActiveHero() {
-      this.activeHero = true;
+    toggleLaserHero() {
+      this.laserHero = true;
       setTimeout(() => {
-       this.activeHero = false 
+       this.laserHero = false 
       }, 700);
+    },
+    toggleGrenadeHero() {
+      this.grenadeHero = true;
+      setTimeout(() => {
+        this.grenadeHero = false;
+      }, 1300);
+      setTimeout(() => {
+        this.grenade = true;
+      }, 1000);
     }
   }
 }
@@ -53,11 +81,28 @@ export default {
   position: relative;
 }
 
-.hero.static {
-  width: 40%;
+.static-hero {
+  width: 150px;
 }
 
-.hero.active {
-  width: 140%;
+.laser-hero {
+  width: 500px;
+  height: 300px;
+  top: 40px;
+}
+
+.grenade-hero {
+  width: 600px;
+  height: 800px;
+  top: -200px;
+  left: 80px;
+}
+
+.grenade {
+  width: 750px;
+  height: 1000px;
+  position: relative;
+  top: -300px;
+  left: -140px;
 }
 </style>

@@ -10,4 +10,9 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+.footer {
+  background-color: #C7C3C2;
+  border: 3px solid #7E7E7E;
+}
+</style>

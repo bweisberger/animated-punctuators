@@ -5,6 +5,7 @@
         <Sentence 
           @clicked-period="toggleLaserHero"
           @clicked-capital="toggleGrenadeHero"
+          :fontSize="baseFontSize"
         />
       </template>
       <template #hero>
@@ -47,7 +48,8 @@ export default {
     return {
       laserHero: false,
       grenadeHero: false,
-      grenade: false
+      grenade: false,
+      baseFontSize: '50px'
     }
   },
   methods: {
@@ -58,6 +60,7 @@ export default {
       }, 700);
     },
     toggleGrenadeHero() {
+      this.
       this.grenadeHero = true;
       setTimeout(() => {
         this.grenadeHero = false;
@@ -65,6 +68,9 @@ export default {
       setTimeout(() => {
         this.grenade = true;
       }, 1000);
+      setTimeout(() => {
+        this.grenade = false;
+      }, 3700)
     }
   }
 }

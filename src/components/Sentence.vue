@@ -1,6 +1,6 @@
 <template>
   <div class="sentence">
-    <Capital text="h" @click="$emit('clicked-capital')"/>
+    <Capital text="h" @click="$emit('clicked-capital')" :size="fontSize"/>
     <p class="inline-h1 clickable">ere is the first hero to the show about 6</p>
     <Period text="ft" spaces="end" @click="$emit('clicked-period')"/>
     <p class="inline-h1 clickable">in stature whose hair is that of a</p>
@@ -18,6 +18,17 @@ export default {
     Period,
     Capital
   },
+  props: {
+    fontSize: {
+      type: String,
+      default: '50px'
+    }
+  },
+  data() {
+    return {
+      size: '50px'
+    }
+  }
 }
 </script>
 

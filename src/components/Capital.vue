@@ -19,7 +19,7 @@ export default {
   data() {
     return {
       capital: false,
-      letter: this.text,
+      letter: this.text.toLowerCase(),
       toggleClass: '',
       textColor: {
         base: '#0000000',

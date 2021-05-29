@@ -1,6 +1,6 @@
 <template>
   <span class="container clickable" @click="toggleCapital">
-    <p class="inline-h1 text" :style="styleObject">{{letter}}</p>
+    <p class="inline-h1 text" :class="toggleClass" :style="styleObject">{{letter}}</p>
   </span>
 </template>
 
@@ -20,6 +20,7 @@ export default {
     return {
       capital: false,
       letter: this.text,
+      toggleClass: '',
       textColor: {
         base: '#0000000',
         hover: '#c9c4c3',
@@ -38,11 +39,12 @@ export default {
   methods: {
     toggleCapital() {
       if (!this.capital) {
+        this.toggleClass = "toggled"
         this.capital = true;
         this.$emit('click');
         setTimeout(() => {
           this.letter = this.letter.toUpperCase();
-        }, 4000)
+        }, 2000)
       }
     }
   }
@@ -51,14 +53,17 @@ export default {
 
 <style scoped>
   .text {
-    transition: all 3s ease;
-    animation: black-hole 1s linear both;
     color: var(--text-color);
+  }
+
+  .text.toggled {
+    animation: black-hole 4s linear both;
   }
 
   @keyframes black-hole {
     0% {font-size: 50px; opacity: 100%;}
-    100% {font-size: 10px; opacity: 0%;}
+    50% {font-size: 10px; opacity: 0%;}
+    100% {font-size: 50px; opacity: 100%;}
   }
   .text:hover {
     color: var(--text-color--hover);

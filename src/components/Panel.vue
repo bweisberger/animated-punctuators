@@ -8,7 +8,7 @@
         <slot name="text" />
       </section>
       <section class="hero-container">
-        <slot name="hero" />
+        <slot name="hero" class="hero" />
       </section>
     </div>
     <slot />
@@ -21,28 +21,29 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .panel {
-  height: 40vh;
+  height: auto;
   width: calc(100% - 84px);
-  padding: 0 40px;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  margin: 0;
 }
 
 .text-hero-container {
   display: flex;
+  justify-content: space-between;
 }
 .text-container {
   width: 75%;
-  padding-left: 20px;
+  padding-left: 12px;
 }
 
 .hero-container {
   display: flex;
-  justify-content: flex-end;
-  width: 25%;
   z-index: -1;
+  height: 200px;
+  width: auto;
 }
 
 .projectile-container {

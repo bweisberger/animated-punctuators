@@ -13,5 +13,6 @@ export default {
 <style>
 .header {
   background-color: hotpink;
+  height: 50px;
 }
 </style>

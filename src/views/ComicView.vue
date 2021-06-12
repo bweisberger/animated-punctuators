@@ -5,7 +5,6 @@
         <Sentence 
           @clicked-period="toggleLaserHero"
           @clicked-capital="toggleGrenadeHero"
-          :fontSize="baseFontSize"
         />
       </template>
       <template #hero>
@@ -48,8 +47,7 @@ export default {
     return {
       laserHero: false,
       grenadeHero: false,
-      grenade: false,
-      baseFontSize: '50px'
+      grenade: false
     }
   },
   methods: {
@@ -77,18 +75,18 @@ export default {
 </script>
 
 <style>
-.header {
-  height: 20vh;
+.wrapper {
+  display: flex;
+  justify-content: space-between;
 }
-.footer {
-  height: 20vh;
-}
+
 .hero {
   position: relative;
+  height: auto;
 }
 
 .static-hero {
-  width: 150px;
+  width: 100px;
 }
 
 .laser-hero {

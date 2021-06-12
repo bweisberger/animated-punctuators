@@ -13,7 +13,7 @@ export default {
       required: true,
     },
     size: {
-      type: Number
+      type: String
     }
   },
   data() {
@@ -32,7 +32,6 @@ export default {
       return {
         '--text-color': this.textColor.base,
         '--text-color--hover': this.textColor.hover,
-        // 'font-size': this.size
       }
     }
   },
@@ -54,6 +53,10 @@ export default {
 <style scoped>
   .text {
     color: var(--text-color);
+    font-family: Sans-Serif;
+    font-weight: 500;
+    display: inline;
+    font-size: 30px;
   }
 
   .text.toggled {
@@ -61,15 +64,16 @@ export default {
   }
 
   @keyframes black-hole {
-    0% {font-size: 50px; opacity: 100%;}
-    50% {font-size: 10px; opacity: 0%;}
-    100% {font-size: 50px; opacity: 100%;}
+    0% {font-size: 30px; opacity: 100%; transform: rotate(0deg);}
+    50% {font-size: 10px; opacity: 0%; transform: rotate(180deg);}
+    100% {font-size: 30px; opacity: 100%; transform: rotate(0deg);}
   }
+
+
   .text:hover {
     color: var(--text-color--hover);
   }
   .container {
-    padding: 2px;
     width: 100px;
     min-width: 100px;
   }

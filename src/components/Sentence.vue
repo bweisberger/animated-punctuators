@@ -1,6 +1,6 @@
 <template>
   <div class="sentence">
-    <Capital text="h" @click="$emit('clicked-capital')" :size="fontSize"/>
+    <Capital text="h" @click="$emit('clicked-capital')" />
     <p class="inline-h1 clickable">ere is the first hero to the show about 6</p>
     <Period text="ft" spaces="end" @click="$emit('clicked-period')"/>
     <p class="inline-h1 clickable">in stature whose hair is that of a</p>
@@ -9,32 +9,21 @@
 </template>
 
 <script>
-import Period from './Period.vue'
-import Capital from './Capital.vue'
+import Period from "./Period.vue";
+import Capital from "./Capital.vue";
 
 export default {
-  name: 'Sentence',
+  name: "Sentence",
   components: {
     Period,
-    Capital
-  },
-  props: {
-    fontSize: {
-      type: String,
-      default: '50px'
-    }
-  },
-  data() {
-    return {
-      size: '50px'
-    }
+    Capital,
   }
-}
+};
 </script>
 
-<style>
+<style scoped>
 .inline-h1 {
-  font-size: 3rem;
+  font-size: 30px;
   font-weight: 500;
   font-family: Sans-Serif;
   display: inline;

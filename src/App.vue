@@ -1,8 +1,8 @@
 <template>
   <div id='app'>
-    <Header/>
-    <ComicView/>
-    <Footer/>
+    <Header class="header"/>
+    <ComicView class="comic-view"/>
+    <Footer class="footer"/>
   </div>
 </template>
 
@@ -20,5 +20,13 @@ export default {
   }
 }
 </script>
+<style>
+#app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+</style>
 
 
